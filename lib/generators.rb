@@ -80,7 +80,7 @@ module Generators
 
   # Parse a string from Sinatra and chomp it to remove stray newlines
   def Generators.__sanitise_input_string(str)
-    if str.nil? do
+    if str.nil?
       return []
     end
     str.split("\n").map {|s| s.chomp}
