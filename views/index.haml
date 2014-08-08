@@ -1,0 +1,29 @@
+%html
+  %head
+    %title XCOM Name Generator
+  %body
+    %h1 The 'Classic' Style Generator
+    .gen_body{:id => 'classic'}
+      %form{:action => 'classic', :method => 'get'}
+        -#= HTML5 doesn't allow multiline placeholders; trick it by spamming spaces.
+        %textarea{:name => 'names', :placeholder => 'Fuzzy Kalimag                                                                                  Doc Brown', :spellcheck => false, :rows => 15}
+        %br
+        %input{:type => 'submit', :value => 'Generate'}
+    %h1 The 'New/Comedic' Style Generator
+    .gen_body{:id => 'modern'}
+      %form{:action => 'modern', :method => 'get'}
+        First Names (Male and Female):
+        %br
+        %textarea{:name => 'firsts_m', :placeholder => 'MaleFuzzy                                                                                  MaleDoc', :spellcheck => false, :rows => 15}
+        %textarea{:name => 'firsts_f', :placeholder => 'FemaleFuzzy                                                                                  FemaleDoc', :spellcheck => false, :rows => 15}
+        %br
+        Surnames:
+        %br
+        %textarea{:name => 'seconds', :placeholder => 'Kalimag                                                                                  Brown', :spellcheck => false, :rows => 15}
+        %br
+        Mixed (randomly first or second, male and female):
+        %br
+        %textarea{:name => 'mixeds_m', :placeholder => 'MaleFuzzy                                                                                  MaleDoc', :spellcheck => false, :rows => 15}
+        %textarea{:name => 'mixeds_f', :placeholder => 'FemaleFuzzy                                                                                  FemaleDoc', :spellcheck => false, :rows => 15}
+        %br
+        %input{:type => 'submit', :value => 'Generate'}
